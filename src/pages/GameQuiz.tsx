@@ -9,7 +9,7 @@ import OXType from './components/OXType.tsx';
 import ShortType from './components/ShortType.tsx';
 import { quizDataMap } from '../data/index.ts';
 import { normalizeAnswer } from '../common/utils/normalizeAnswer.ts';
-import type { PageType } from '../common/theme/types.ts';
+import type { JsonType } from '../common/theme/types.ts';
 import * as Styled from './GameQuiz.style';
 
 import Correct from '../assets/images/Correct.svg';
@@ -17,7 +17,7 @@ import Wrong from '../assets/images/Wrong.svg';
 
 function GameQuiz() {
     // subject === 'kor' | 'math' | 'eng'
-    const { subject } = useParams<{ subject: PageType }>();
+    const { subject } = useParams<{ subject: JsonType }>();
     // 에러 방지를 위해, undefined인 경우 정의해줌
     const quizData = subject ? quizDataMap[subject] : [];
 
