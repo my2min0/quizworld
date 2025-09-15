@@ -104,7 +104,7 @@ function GameResult() {
 
             <section className="num-section">
                 <div className="row">
-                    {quizData.slice(0, half).map((q, idx) => (
+                    {quizData.slice(0, half).map((_q, idx) => (
                         <button key={idx} onClick={() => {
                             setSelectedIndex(idx);
                             setResultModalOpen(true);
@@ -118,7 +118,7 @@ function GameResult() {
                     ))}
                 </div>
                 <div className="row">
-                    {quizData.slice(half).map((q, idx) => (
+                    {quizData.slice(half).map((_q, idx) => (
                         <button key={idx + half} onClick={() => {
                             setSelectedIndex(idx + half);
                             setResultModalOpen(true);
