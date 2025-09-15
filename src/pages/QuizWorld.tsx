@@ -1,10 +1,10 @@
 ﻿import { useState } from 'react';
 import * as Styled from './QuizWorld.style.tsx';
 import AlertModal from './components/common/AlertModal.tsx';
-import KorCardImg from '../assets/images/korCardImg.png';
-import MathCardImg from '../assets/images/mathCardImg.png';
-import EngCardImg from '../assets/images/engCardImg.png';
-import mainLogo from '../assets/images/mainLogo.png';
+import KorCardImg from '@/assets/images/korCardImg.png';
+import MathCardImg from '@/assets/images/mathCardImg.png';
+import EngCardImg from '@/assets/images/engCardImg.png';
+import mainLogo from '@/assets/images/mainLogo.png';
 
 function QuizWorld() {
     const [showAlertModal, setShowAlertModal] = useState(false);

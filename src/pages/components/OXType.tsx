@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom";
 import type { PageType, ColorType } from '../../common/theme/types';
 import * as Styled from './OXType.style';
 
-import O from '../../assets/images/O.svg';
-import WhiteO from '../../assets/images/WhiteO.svg';
-import X from '../../assets/images/X.svg';
-import WhiteX from '../../assets/images/WhiteX.svg';
+import O from '@/assets/images/O.svg';
+import WhiteO from '@/assets/images/WhiteO.svg';
+import X from '@/assets/images/X.svg';
+import WhiteX from '@/assets/images/WhiteX.svg';
 
 interface IOXTypeProps {
     onAnswerSelect: (answer: string) => void;

@@ -12,8 +12,8 @@ import { normalizeAnswer } from '../common/utils/normalizeAnswer.ts';
 import type { JsonType } from '../common/theme/types.ts';
 import * as Styled from './GameQuiz.style';
 
-import Correct from '../assets/images/Correct.svg';
-import Wrong from '../assets/images/Wrong.svg';
+import Correct from '@/assets/images/Correct.svg';
+import Wrong from '@/assets/images/Wrong.svg';
 
 function GameQuiz() {
     // subject === 'kor' | 'math' | 'eng'

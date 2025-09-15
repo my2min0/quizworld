@@ -7,9 +7,9 @@ import PopupError from './components/common/PopupError.tsx';
 import type { PageType } from '../common/theme/types.ts';
 import * as Styled from './GameMain.style';
 
-import korLogo from '../assets/images/korLogo.png';
-import mathLogo from '../assets/images/mathLogo.png';
-import engLogo from '../assets/images/engLogo.png';
+import korLogo from '@/assets/images/korLogo.png';
+import mathLogo from '@/assets/images/mathLogo.png';
+import engLogo from '@/assets/images/engLogo.png';
 
 function GameMain() {
     // subject === 'kor' | 'math' | 'eng'

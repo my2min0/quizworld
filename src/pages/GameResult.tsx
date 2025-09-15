@@ -9,13 +9,13 @@ import resultMessage from '../data/resultMessages.json';
 import type { PageType } from '../common/theme/types';
 import * as Styled from './GameResult.style';
 
-import Correct from '../assets/images/Correct.svg';
-import Wrong from '../assets/images/Wrong.svg';
+import Correct from '@/assets/images/Correct.svg';
+import Wrong from '@/assets/images/Wrong.svg';
 import FireWork from '../assets/lotties/firework.json';
 import touch from '../assets/lotties/touch.json';
-import korLogo from '../assets/images/korLogo.png';
-import mathLogo from '../assets/images/mathLogo.png';
-import engLogo from '../assets/images/engLogo.png';
+import korLogo from '@/assets/images/korLogo.png';
+import mathLogo from '@/assets/images/mathLogo.png';
+import engLogo from '@/assets/images/engLogo.png';
 
 interface QuizData {
     type: string;
