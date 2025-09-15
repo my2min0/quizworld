@@ -8,8 +8,8 @@ import Button from "./Button";
 
 
 function Error() {
-    const [searchParams] = useSearchParams();
-    const type = searchParams.get('type') ?? 'unknown';
+    // const [searchParams] = useSearchParams();
+    // const type = searchParams.get('type') ?? 'unknown';
 
     const location = useLocation();
     const state = location.state as { errorType?: ErrorType };
