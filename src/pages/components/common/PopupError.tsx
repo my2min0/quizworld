@@ -1,4 +1,4 @@
-﻿import { useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
+﻿import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Lottie from "lottie-react";
 import ErrorLottie from '../../../assets/lotties/error.json';
 import { errorMessage, type ErrorType } from "../../../common/constants/error";
