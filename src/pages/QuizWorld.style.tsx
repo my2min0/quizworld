@@ -87,7 +87,6 @@ export const CardList = styled.div`
 
     section {
         ${flexbox({direction: 'column', align: 'center', })}
-        background-color: ${color('main','lightest')};
         width: 300px;
         height: 380px;
         border-radius: 15px;
@@ -113,6 +112,15 @@ export const CardList = styled.div`
             color: ${color('main','darkest')}
         }
 
+    }
+    section:nth-child(1) {
+        background-color: ${color('kor', 'light')};
+    }
+    section:nth-child(2) {
+        background-color: ${color('math', 'light')};
+    }
+    section:nth-child(3) {
+        background-color: ${color('eng', 'light')};
     }
     section:hover {
         transform: translateY(-10px) rotate(-1deg) scale(1.02);
