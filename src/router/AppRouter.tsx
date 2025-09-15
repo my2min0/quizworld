@@ -1,9 +1,13 @@
 ﻿import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Loading from "../pages/components/common/Loading"
+import Loading from "../pages/components/common/Loading";
 
 // 페이지 라우터 스플리팅 ( 라우팅에 따른 컴포넌트 파일 분리 )
 const QuizWorld = lazy(() => import("../pages/QuizWorld"));
+const GameMain = lazy(() => import("../pages/GameMain"));
+const GameQuiz = lazy(() => import("../pages/GameQuiz"));
+const GameResult = lazy(() => import("../pages/GameResult"));
+const PopupError = lazy(() => import("../pages/components/common/PopupError"));
 
 function AppRouter() {
     return (
@@ -14,7 +18,12 @@ function AppRouter() {
                 {/* 메인 */}
                 <Route path="/quiz-world" element={<QuizWorld/>}/>
                 <Route path="*" element={<Navigate to='/quiz-world' replace/>}/>
-            </Routes>
+                {/* 팝업 */}
+                <Route path='/:subject' element={<GameMain/>}/>
+                <Route path='/:subject/quiz' element={<GameQuiz/>}/>
+                <Route path='/:subject/quiz/result' element={<GameResult/>}/>
+                <Route path='/:subject/*' element={<PopupError />}/>
+                </Routes>
         </Suspense>
     )
 }

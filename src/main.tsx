@@ -18,17 +18,15 @@ import { theme } from "./common/theme/theme.ts";
 
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
-import PopupApp from "./PopupApp.tsx";
 
 const queryClient = new QueryClient();
-const isPopup = window.opener !== null;
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <HelmetProvider>
         <QueryClientProvider client={queryClient}>
             <ThemeProvider theme={ theme }>
                 <BrowserRouter>
-                    { isPopup ? <PopupApp/> : <App/> }
+                    <App/>
                 </BrowserRouter>
             </ThemeProvider>
         </QueryClientProvider>
