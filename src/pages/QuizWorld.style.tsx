@@ -9,73 +9,64 @@ export const QuizWorldWrapper = styled.div`
     min-height: 100vh;
     background-color: ${color('common', 'background')};
 
-    p {
+    .popup-alert {
         font-family: 'Pretendard';
         text-align: center;
-        font-size: 18px;
+        font-size: 1.8rem;
         font-weight: 500;
         color: ${color('main','darkest')};
 
-        margin-top: 70px;
+        margin-top: 7rem;
+        margin-bottom: 5rem;
         padding: .5rem 1rem;
-        width: fit-content;
+        max-width: fit-content;
         background-color: ${color('main', 'lightest')};
         border: 2px solid ${color('main', 'dark')};
         border-radius: 1.5rem;
     }
 
     @media screen and (max-width: ${tabletWidth}px) {
-        p {
-            font-size: 13px;
+        .popup-alert {
+            font-size: 1.3rem;
+            margin-top: 5rem;
         }
     }
 `;
 
 export const QuizWorldTitle = styled.section`
     ${flexbox({direction: 'column', align: 'center'})}
-    h1 {
-        font-family: 'Cafe24NyangiBlack';
-        font-size: 90px;
-        text-align: center;
-        color: ${color('main', 'dark')};
-        margin-top: 50px;
-        padding: 5rem;
-        padding-bottom: 4rem;
-    }
-
     img {
-        width: 500px;
-        margin-top: 90px;
-        padding-bottom: 50px;
+        width: 50rem;
+        margin-top: 5rem;
+        padding-bottom: 3rem;
     }
-
     h2 {
         font-family: 'SchoolSafeOuting';
         text-align: center;
-        font-size: 37px;
+        font-size: 3.7rem;
         font-weight: 700;
-        letter-spacing: 2px;
+        letter-spacing: .2rem;
         line-height: 150%;
         color: ${color('main', 'darkest')};
     }
 
     @media screen and (max-width: ${tabletWidth}px) {
-        h1 {
-            font-size: 70px;
-            padding-bottom: 2rem
+        img {
+            width: 30rem;
         }
         h2 {
-            font-size: 25px;
+            font-size: 2.5rem;
         }
     }
 
     @media screen and (max-width: ${mobileWidth}px) {
-        h1 {
-            font-size: 50px;
-            margin-top: 1rem;
+        img {
+            width: 30rem;
+            margin-top: 6rem;
+            padding-bottom: 3rem;
         }
         h2 {
-            font-size: 20px;
+            font-size: 2rem;
         }
     }
 `;
@@ -84,87 +75,109 @@ export const CardList = styled.div`
     ${flexbox({justify: 'center'})}
     margin-top: 5rem;
     gap: 3rem;
+    max-width: 1200px;
 
     section {
         ${flexbox({direction: 'column', align: 'center', })}
-        width: 300px;
-        height: 380px;
-        border-radius: 15px;
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+        width: 30rem;
+        height: 34rem;
+        border-radius: 1.5rem;
+        box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.15);
+        cursor: pointer;
 
         figure {
-            width: 250px;
-            height: 250px;
+            width: 25rem;
+            height: 22rem;
 
-            margin-top: 25px;
+            margin-top: 2.5rem;
 
             img {
-                width: 250px;
-                height: 250px;
+                width: 22rem;
+                height: 22rem;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
         h1 {
             margin: auto 0;
             font-family: 'SchoolSafeOuting';
-            font-size: 27px;
+            font-size: 2.7rem;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: .1rem;
             color: ${color('main','darkest')}
         }
 
     }
     section:nth-child(1) {
-        background-color: ${color('kor', 'light')};
+        background-color: ${color('kor','light')};
     }
     section:nth-child(2) {
-        background-color: ${color('math', 'light')};
+        background-color: ${color('math','light')};
     }
     section:nth-child(3) {
-        background-color: ${color('eng', 'light')};
+        background-color: ${color('eng','light')};
     }
     section:hover {
-        transform: translateY(-10px) rotate(-1deg) scale(1.02);
-        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+        transform: translateY(--1rem) rotate(-1deg) scale(1.02);
+        box-shadow: 0 1.2rem 2rem rgba(0, 0, 0, 0.25);
     }
 
     @media screen and (max-width: ${tabletWidth}px) {
+        margin-top: 4rem;
+        gap: 2rem;
         section {
-            width: 200px;
-            height: 250px;
+            width: 13rem;
+            height: 18rem;
 
             figure {
-                width: 160px;
-                height: 160px;
+                width: 10rem;
+                height: 11rem;
+                margin-top: 1.5rem;
                 img {
-                    width: 160px;
-                    height: 160px;
+                    width: 11rem;
+                    height: 11rem;
                 }
             }
             h1 {
-                font-size: 22px;
+                font-size: 1.8rem;
             }
         }
     }
 
     @media screen and (max-width: ${mobileWidth}px) {
-        ${flexbox({direction: 'column'})}
-        gap: 1rem;
-        margin-top: 2rem;
+        ${flexbox({direction: 'row'})}
+        gap: 2rem;
+        padding: 0 2rem;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+
         section {
-            ${flexbox({direction: 'row', justify: 'center'})}
-            gap: 1.5rem;
-            width: 250px;
-            height: 100px;
-            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.15);
-            figure {
-                width: 50px;
-                height: 50px;
-                img {
-                    width: 50px;
-                    height: 50px;
-                    border-radius: 50%;
-                }
-            }
+            scroll-snap-align: center;
+            transition: transform 0.3s;
         }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+`;
+
+export const QuizWorldFooter = styled.footer`
+    ${flexbox({direction: 'row', justify: 'space-between'})}
+    gap: 3rem;
+    margin-top: auto;
+
+    p {
+        font-size: 1.3rem;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    @media screen and (max-width: ${mobileWidth}px) {
+        font-size: 1rem;
     }
 `;

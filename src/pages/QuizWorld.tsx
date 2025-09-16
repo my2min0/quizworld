@@ -62,7 +62,12 @@ function QuizWorld() {
                 </section>
             </Styled.CardList>
             
-            <p>※ 게임은 새 창으로 열리니, 팝업 차단을 해제해주세요</p>
+            <p className='popup-alert'>※ 게임은 새 창으로 열리니, 팝업 차단을 해제해주세요</p>
+
+            <Styled.QuizWorldFooter>
+                <p>© 2025 꾸비의 퀴즈월드</p>
+                <p><strong>Made by </strong><a href='https://github.com/my2min0' target='_blank' rel='noopener noreferrer'>https://github.com/my2min0</a></p>
+            </Styled.QuizWorldFooter>
             {showAlertModal && (
                 <AlertModal
                     page='main'
