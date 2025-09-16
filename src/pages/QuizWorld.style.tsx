@@ -10,7 +10,7 @@ export const QuizWorldWrapper = styled.div`
     background-color: ${color('common', 'background')};
 
     .popup-alert {
-        font-family: 'Pretendard';
+        //font-family: 'Pretendard';
         text-align: center;
         font-size: 1.8rem;
         font-weight: 500;
@@ -79,7 +79,7 @@ export const CardList = styled.div`
 
     section {
         ${flexbox({direction: 'column', align: 'center', })}
-        width: 30rem;
+        width: 27rem;
         height: 34rem;
         border-radius: 1.5rem;
         box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.15);
