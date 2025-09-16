@@ -28,7 +28,7 @@ export const QuizWorldWrapper = styled.div`
     @media screen and (max-width: ${tabletWidth}px) {
         .popup-alert {
             font-size: 1.3rem;
-            margin-top: 5rem;
+            margin-top: 4rem;
         }
     }
 `;
@@ -147,20 +147,32 @@ export const CardList = styled.div`
 
     @media screen and (max-width: ${mobileWidth}px) {
         ${flexbox({direction: 'row'})}
+        overflow-x: auto;
         gap: 2rem;
         padding: 0 2rem;
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
+        width: 21rem;
 
         section {
+            flex: 0 0 80%;
             scroll-snap-align: center;
             transition: transform 0.3s;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            margin-bottom: 1rem;
         }
 
         &::-webkit-scrollbar {
             display: none;
         }
+
+        --webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        --webkit-mask-repeat: no-repeat;
+        --webkit-mask-size: 100% 100%;
+        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        mask-repeat: no-repeat;
+        mask-size: 100% 100%;
     }
 `;
 
