@@ -49,6 +49,8 @@ function ShortType({
                 }
                 <input
                     type="text"
+                    inputMode={subject === 'math' ? 'numeric' : 'text'}
+                    pattern={subject === 'math' ? '[0-9]*' : undefined}
                     value={userAnswer || ''}
                     onChange={handleInputChange}
                     onKeyDown={handleKeyDown}
