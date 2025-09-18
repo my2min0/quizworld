@@ -240,7 +240,7 @@ export const ButtonWrapper = styled.div`
         width: 90%;
         bottom: 1.5rem;
 
-        position: absolute;
+        position: fixed;
         left: 50%;
         transform: translateX(-50%);
 
@@ -250,16 +250,8 @@ export const ButtonWrapper = styled.div`
         }
     }
 
-    @media screen and (max-width: ${tabletWidth}px) {
-        .btn-set {
-            position: fixed;
-            bottom: 1.5rem;
-        }
-    }
-
     @media screen and (max-width: ${mobileWidth}px) {
         .btn-set {
-            position: absolute;
             max-width: 25rem;
             width: 90%;
 

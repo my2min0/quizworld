@@ -186,7 +186,6 @@ export const ResultModalWrapper = styled.div<ISubjectProps>`
                 width: 2.5rem;
             }
             .answer-p {
-                width: 75%;
                 padding: 0 .2rem;
                 font-size: 1.05rem;
                 margin-left: 0rem;
