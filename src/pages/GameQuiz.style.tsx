@@ -251,7 +251,10 @@ export const ButtonWrapper = styled.div`
     }
 
     @media screen and (max-width: ${tabletWidth}px) {
-        height: 80dvh;
+        .btn-set {
+            position: sticky;
+            bottom: 1.5rem;
+        }
     }
 
     @media screen and (max-width: ${mobileWidth}px) {

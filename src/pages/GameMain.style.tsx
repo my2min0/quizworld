@@ -98,11 +98,6 @@ export const GameMainWrapper = styled.div<ISubjectProps>`
         bottom: 2rem;
     }
 
-    @media screen and (max-width: ${tabletWidth}px) {
-        height: 80dvh;
-        
-    }
-
     @media screen and (max-width: ${mobileWidth}px) {
         width: 100vw;
         height: 100dvh;

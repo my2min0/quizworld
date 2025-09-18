@@ -37,67 +37,89 @@ export const ResultModalWrapper = styled.div<ISubjectProps>`
             ${flexbox({align: 'center'})}
             gap: .5rem;
         }
+    }
 
-        .q-section {
-            h1 {
-                font-size: 1.2rem;
-                width: 4.2rem;
-                font-weight: 600;
-                background-color: #000;
-                color: #FFF;
-                padding: .7rem 1rem;
-                border-radius: 2rem;
-            }
-            .question {
-                font-size: 1.3rem;
-                font-weight: 600;
-                line-height: 120%;
-                width: 27.5rem;
-            }
-            .passage {
-                ${flexbox({justify: 'center', align: 'center'})}
-                width: 100%;
-                height: 7rem;
-                margin-top: 1rem;
-                font-size: 1.3rem;
-                font-weight: 600;
-                line-height: 120%;
-                padding: 2rem;
-                background-color: ${({ page }) => color(page, 'light')};
-                border-radius: 1.5rem;
-            }
+    .content {
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 26rem;
+    }
+
+    .q-section {
+        position: relative;
+        h1 {
+            position: relative;
+            font-size: 1.2rem;
+            min-width: 4.4rem;
+            font-weight: 600;
+            background-color: #000;
+            color: #FFF;
+            padding: .7rem 1rem;
+            border-radius: 2rem;
+            text-align: center;
+        }
+        .question {
+            position: relative;
+            font-size: 1.3rem;
+            font-weight: 600;
+            line-height: 120%;
+            width: 83%;                
+        }
+        .passage {
+            position: relative;
+            ${flexbox({justify: 'center', align: 'center'})}
+            width: 100%;
+            height: 7rem;
+            top: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            line-height: 120%;
+            padding: 2rem;
+            background-color: ${({ page }) => color(page, 'light')};
+            border-radius: 1.5rem;
+        }
+    }
+
+    .a-section {
+        position: relative;
+        div {
+            position: relative;
+            top: 2rem;
+            left: 1rem;
+            margin-top: 1.2rem;
+        }
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        .submit-a {
+            width: 5.5rem;
+        }
+        .correct-a {
+            width: 3rem;
+        }
+        .answer-p {
+            font-size: 1.3rem;
+            font-weight: 500;
+            // 형광펜 효과
+            box-shadow: inset 0 -0.5em 0 ${({ page }) => color(page, 'light')};
+            margin-left: .8rem;
         }
 
-        .a-section {
-            div {
-                margin-top: 2rem;
-                margin-left: 1rem;
-            }
-            h3 {
-                font-size: 1.4rem;
-                font-weight: 600;
-            }
-            p{
-                font-size: 1.3rem;
-                font-weight: 500;
-                // 형광펜 효과
-                box-shadow: inset 0 -0.5em 0 ${({ page }) => color(page, 'light')};
-                margin-left: .8rem;
-            }
-
-            .explanation {
-                position: absolute;
-                top: 21.5rem;
-                left: 4.5rem;
-                max-width: 80%;
+        .explanation {
+            p {
+                position: relative;
+                top: 3rem;
+                left: 3rem;
+                max-width: 85%;
                 padding: .8rem 1.3rem;
                 background-color: ${({ page }) => color(page, 'dark')};
-                color: ${({ page }) => color(page, 'lightest')};
                 border-radius: 3rem;
+                color: ${({ page }) => color(page, 'lightest')};
                 font-size: 1.1rem;
                 font-weight: 600;
             }
-            .explanation::after {
+            p::after {
                 content: '';
                 position: absolute;
                 top: -1.8rem;
@@ -106,13 +128,13 @@ export const ResultModalWrapper = styled.div<ISubjectProps>`
                 border-color: transparent transparent ${({ page }) => color(page, 'dark')} transparent;
             }
         }
+    }
 
-        .btn {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 1.6rem;
-        }
+    .btn {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 1.6rem;
     }
 
     @media screen and (max-width: ${mobileWidth}px) {
@@ -129,10 +151,14 @@ export const ResultModalWrapper = styled.div<ISubjectProps>`
             height: 28rem;
         }
 
+        .content {
+            height: 21.5rem;
+        }
+
         .q-section {
             h1 {
                 font-size: 1rem !important;
-                width: 3.3rem !important;
+                min-width: 3.3rem !important;
                 padding: .5rem .7rem !important;
             }
             .question {
@@ -147,25 +173,35 @@ export const ResultModalWrapper = styled.div<ISubjectProps>`
 
         .a-section {
             div {
-                margin-top: 1.5rem !important;
+                top: 1rem !important;
+                left: .5rem !important;
             }
             h3 {
-                font-size: 1.2rem !important;
+                font-size: 1.1rem !important;
             }
-            p {
-                font-size: 1.2rem !important;
-                margin-left: .5rem !important;
+            .submit-a {
+                width: 4.5rem !important;
+            }
+            .correct-a {
+                width: 2.5rem !important;
+            }
+            .answer-p {
+                font-size: 1.05rem !important;
+                margin-left: 0rem !important;
             }
             .explanation {
-                top: 17rem !important;
-                left: 2rem !important;
-                max-width: 90% !important;
-                padding: .5rem 1rem !important;
-                font-size: 1rem !important;
-            }
-            .explanation::after {
-                top: -1.5rem !important;
-                left: 2.8rem !important;
+                p {
+                    position: relative !important;
+                    top: 2rem !important;
+                    left: 0rem !important;
+                    max-width: 100% !important;
+                    padding: .5rem 1rem !important;
+                    font-size: 1rem !important;
+                }
+                p::after {
+                    top: -1.5rem !important;
+                    left: 2.8rem !important;
+                }
             }
         }
     }

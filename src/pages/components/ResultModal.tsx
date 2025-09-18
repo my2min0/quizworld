@@ -55,27 +55,29 @@ function ResultModal({
         <Styled.ResultModalWrapper page={ subject }>
             <div className='backdrop'>
                 <div className='modal'>
-                    <section className="q-section">
-                        <div>
-                            <h1>문제</h1>
-                            <h2 className="question">{question.question}</h2>
-                        </div>
-                        <h2 className="passage">{question.passage}</h2>
-                    </section>
+                    <div className='content'>
+                        <section className="q-section">
+                            <div>
+                                <h1>문제</h1>
+                                <h2 className="question">{question.question}</h2>
+                            </div>
+                            <h2 className="passage">{question.passage}</h2>
+                        </section>
 
-                    <section className="a-section">
-                        <div className="selected">
-                            <h3>제출한 답</h3>
-                            <p>{result.selected}</p>
-                        </div>
-                        <div className="answer">
-                            <h3>정답</h3>
-                            <p>{question.answer}</p>
-                        </div>
-                        <span className="explanation">
-                            {question.explanation}
-                        </span>
-                    </section>
+                        <section className="a-section">
+                            <div className="selected">
+                                <h3 className='submit-a'>제출한 답</h3>
+                                <p className='answer-p'>{result.selected}</p>
+                            </div>
+                            <div className="answer">
+                                <h3 className='correct-a'>정답</h3>
+                                <p className="answer-p">{question.answer}</p>
+                            </div>
+                            <span className="explanation">
+                                <p>{question.explanation}</p>
+                            </span>
+                        </section>
+                    </div>
 
                     <Button
                         page={ subject }
