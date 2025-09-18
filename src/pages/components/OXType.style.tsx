@@ -101,6 +101,17 @@ export const OButton = styled.button<IOXTypeProps>`
         position: relative;
         top: 1rem;
     }
+
+    @media screen and (max-width: ${mobileWidth}px) {
+        top: 1.2rem;
+        left: 20rem;
+
+        .correct {
+            top: -7rem;
+            left: 1rem;
+            font-size: 1.1rem;
+        }
+    }
 `;
 
 export const XButton = styled.button<IOXTypeProps>`
@@ -152,5 +163,11 @@ export const XButton = styled.button<IOXTypeProps>`
     @media screen and (max-width: ${mobileWidth}px) {
         top: 1.2rem;
         left: 20rem;
+
+        .correct {
+            top: -7rem;
+            left: 1rem;
+            font-size: 1.1rem;
+        }
     }
 `;
