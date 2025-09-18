@@ -62,8 +62,7 @@ export const Button = styled.div<IButtonStyleProps>`
         }
 
         .md {
-            max-width: 19rem;
-            width: 90%;
+            width: clamp(9rem, 40vw, 18rem);
             height: 3.3rem;
             font-size: 1.4rem;
         }
