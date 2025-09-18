@@ -1,5 +1,5 @@
 ﻿import styled from "styled-components";
-import { mobileWidth } from "../App.style";
+import { mobileWidth, tabletWidth } from "../App.style";
 import { flexbox } from "../common/theme/flexbox";
 import { color } from "../common/theme/colors";
 import type { PageType } from "../common/theme/types";
@@ -96,6 +96,10 @@ export const GameMainWrapper = styled.div<ISubjectProps>`
         left: 50%;
         transform: translateX(-50%);
         bottom: 2rem;
+    }
+
+    @media screen and (max-width: ${tabletWidth}px) {
+        height: 90dvh;
     }
 
     @media screen and (max-width: ${mobileWidth}px) {
