@@ -54,7 +54,7 @@ export const QuizWrapper = styled.div`
             max-width: 42rem;
             width: 100%;
             height: 2.85rem;
-            padding: 0;
+            padding: 0 3rem;
             border-radius: 2rem;
             border-width: 2.5px;
 
@@ -105,7 +105,8 @@ export const OptWrapper = styled.button<IOptWrapperProps>`
     @media screen and (max-width: ${mobileWidth}px) {
         .correct {
             top: .5rem;
-            font-size: 1.1rem;
+            left: .6rem;
+            font-size: 1rem;
         }
     }
 `;

@@ -32,11 +32,6 @@ export const ResultModalWrapper = styled.div<ISubjectProps>`
 
         background-color: #FFF;
         border-radius: 2.5rem;
-
-        section > div {
-            ${flexbox({align: 'center'})}
-            gap: .5rem;
-        }
     }
 
     .content {
@@ -47,6 +42,10 @@ export const ResultModalWrapper = styled.div<ISubjectProps>`
 
     .q-section {
         position: relative;
+        div {
+            ${flexbox({justify: 'flex-start', align: 'center'})}
+            gap: .3rem;
+        }
         h1 {
             position: relative;
             font-size: 1.2rem;
@@ -83,9 +82,11 @@ export const ResultModalWrapper = styled.div<ISubjectProps>`
     .a-section {
         position: relative;
         div {
+            ${flexbox({justify: 'flex-start', align: 'center'})}
+            gap: 0;
             position: relative;
             top: 2rem;
-            left: 1rem;
+            left: .5rem;
             margin-top: 1.2rem;
         }
         h3 {
@@ -173,34 +174,35 @@ export const ResultModalWrapper = styled.div<ISubjectProps>`
 
         .a-section {
             div {
-                top: 1rem !important;
-                left: .5rem !important;
+                top: 1rem;
             }
             h3 {
-                font-size: 1.1rem !important;
+                font-size: 1.1rem;
             }
             .submit-a {
-                width: 4.5rem !important;
+                width: 4.5rem;
             }
             .correct-a {
-                width: 2.5rem !important;
+                width: 2.5rem;
             }
             .answer-p {
-                font-size: 1.05rem !important;
-                margin-left: 0rem !important;
+                width: 75%;
+                padding: 0 .2rem;
+                font-size: 1.05rem;
+                margin-left: 0rem;
             }
             .explanation {
                 p {
-                    position: relative !important;
-                    top: 2rem !important;
-                    left: 0rem !important;
-                    max-width: 100% !important;
-                    padding: .5rem 1rem !important;
-                    font-size: 1rem !important;
+                    position: relative;
+                    top: 2rem;
+                    left: 0rem;
+                    max-width: 100%;
+                    padding: .5rem 1rem;
+                    font-size: 1rem;
                 }
                 p::after {
-                    top: -1.5rem !important;
-                    left: 2.8rem !important;
+                    top: -1.5rem;
+                    left: 2.8rem;
                 }
             }
         }
