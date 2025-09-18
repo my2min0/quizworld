@@ -12,8 +12,8 @@ import { normalizeAnswer } from '../common/utils/normalizeAnswer.ts';
 import type { JsonType } from '../common/theme/types.ts';
 import * as Styled from './GameQuiz.style';
 
-import Correct from '@/assets/images/Correct.svg';
-import Wrong from '@/assets/images/Wrong.svg';
+import Correct from '../assets/images/Correct.svg';
+import Wrong from '../assets/images/Wrong.svg';
 
 function GameQuiz() {
     // subject === 'kor' | 'math' | 'eng'
@@ -85,7 +85,14 @@ function GameQuiz() {
         setIsSubmitted(true);
 
         // 사용자의 답, 정답/오답, 제출여부 저장
-        const isCorrect = currentQuestion.answer === userAnswer;
+        let isCorrect = false;
+        if (currentQuestion.type === 'SB') {
+            // 주관식은 정규화 처리하기
+            isCorrect = normalizeAnswer(currentQuestion.subject, userAnswer) === normalizeAnswer(currentQuestion.subject, currentQuestion.answer);
+        } else {
+            isCorrect = currentQuestion.answer === userAnswer;
+        }
+
         const updateResult = [...userResult];
         updateResult[currentIndex] = {
             selected: userAnswer,

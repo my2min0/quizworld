@@ -1,5 +1,5 @@
 ﻿import styled, { css } from "styled-components";
-import { tabletWidth } from "../../App.style";
+import { mobileWidth } from "../../App.style";
 import { flexbox } from "../../common/theme/flexbox";
 import { color } from "../../common/theme/colors";
 import type { PageType, ColorType } from "../../common/theme/types";
@@ -12,22 +12,23 @@ interface IOptWrapperProps {
 export const QuizWrapper = styled.div`
     fieldset {
         ${flexbox({direction: 'column', justify: 'center', align: 'center'})}
-        gap: 14px;
+        gap: .7rem;
         position: relative;
     }
 
     button {
         position: relative;
-        width: 750px;
-        min-height: 52px;
-        padding: 12px 20px;
-        border-radius: 20px;
+        max-width: 45rem;
+        width: 100%;
+        height: 3.7rem;
+        padding: .7rem 2rem;
+        border-radius: 1.5rem;
         border: 2px solid #EEE3D2;
         outline: none;
         outline-offset: -1px;
         background-color: #FFF;
 
-        font-size: 20px;
+        font-size: 1.4rem;
         font-weight: 600;
         line-height: 130%;
 
@@ -37,23 +38,26 @@ export const QuizWrapper = styled.div`
         }
     }
 
-    @media screen and (max-width: ${tabletWidth}px) {
+    @media screen and (max-width: ${mobileWidth}px) {
         fieldset {
-            max-width: 420px;
+            max-width: 42rem;
             width: 100%;
+            gap: .4rem;
         }
         
         div {
-            max-width: 420px;
+            max-width: 42rem;
             width: 100%;
         }
         button {
-            max-width: 420px;
+            max-width: 42rem;
             width: 100%;
-            height: 50px;
+            height: 2.85rem;
             padding: 0;
-            border-radius: 20px;
+            border-radius: 2rem;
             border-width: 2.5px;
+
+            font-size: 1.2rem;
         }
     }
 `;
@@ -66,11 +70,6 @@ export const OptWrapper = styled.button<IOptWrapperProps>`
                     border: 2px solid  ${color(page, 'dark')} !important;
                     outline: 2px solid  ${color(page, 'dark')} !important;
                     color: #000;
-
-                    @media screen and (max-width: ${tabletWidth}px) {
-                        border-width: 3px !important;
-                        outline-width: 3px !important;
-                    }
                 `;
             case 'correct' : 
                 return css`
@@ -89,22 +88,23 @@ export const OptWrapper = styled.button<IOptWrapperProps>`
 
     .correct {
         ${flexbox({align: 'center'})}
-        gap: 6px;
+        gap: .6rem;
 
         position: absolute;
-        left: 15px;
-        top: 10px;
+        left: 1rem;
+        top: .8rem;
 
         z-index: 100;
 
         color: #FFF;
-        font-size: 20px;
+        font-size: 1.4rem;
         font-weight: 500;
     }
 
-    @media screen and (max-width: ${tabletWidth}px) {
+    @media screen and (max-width: ${mobileWidth}px) {
         .correct {
-            top: 10px;
+            top: .5rem;
+            font-size: 1.1rem;
         }
     }
 `;

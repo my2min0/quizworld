@@ -7,5 +7,5 @@ import type { JsonType } from '../common/theme/types'
 export const quizDataMap:  Record<JsonType, typeof kor> = {
     kor,
     math,
-    eng
+    eng,
 }

@@ -1,5 +1,5 @@
 ﻿import styled from "styled-components";
-import { tabletWidth, mobileWidth } from "../App.style";
+import { tabletWidth, desktopWidth } from "../App.style";
 import { flexbox } from "../common/theme/flexbox";
 import { color } from "../common/theme/colors";
 
@@ -7,28 +7,38 @@ export const QuizWorldWrapper = styled.div`
     ${flexbox({direction: 'column', align: 'center'})}
     width: 100vw;
     min-height: 100vh;
+    padding: 0 2rem;
     background-color: ${color('common', 'background')};
 
     .popup-alert {
         //font-family: 'Pretendard';
         text-align: center;
-        font-size: 1.8rem;
+        font-size: clamp(1.2rem, 1.5vw, 1.6rem);
         font-weight: 500;
         color: ${color('main','darkest')};
 
-        margin-top: 7rem;
+        margin-top: 6rem;
         margin-bottom: 5rem;
         padding: .5rem 1rem;
         max-width: fit-content;
         background-color: ${color('main', 'lightest')};
         border: 2px solid ${color('main', 'dark')};
         border-radius: 1.5rem;
+
+        br {
+            display: none;
+        }
     }
 
     @media screen and (max-width: ${tabletWidth}px) {
         .popup-alert {
-            font-size: 1.3rem;
-            margin-top: 4rem;
+            font-size: 1.1rem;
+            line-height: 130%;
+            margin-top: 3rem;
+
+            br {
+                display: block;
+            }
         }
     }
 `;
@@ -36,37 +46,36 @@ export const QuizWorldWrapper = styled.div`
 export const QuizWorldTitle = styled.section`
     ${flexbox({direction: 'column', align: 'center'})}
     img {
-        width: 50rem;
+        max-width: 50rem;
+        width: 80%;
         margin-top: 5rem;
         padding-bottom: 3rem;
     }
     h2 {
         font-family: 'SchoolSafeOuting';
         text-align: center;
-        font-size: 3.7rem;
+        font-size: clamp(2.5rem, 2vw, 3.7rem);
         font-weight: 700;
         letter-spacing: .2rem;
         line-height: 150%;
         color: ${color('main', 'darkest')};
     }
 
-    @media screen and (max-width: ${tabletWidth}px) {
-        img {
-            width: 30rem;
-        }
+    @media screen and (max-width: ${desktopWidth}px) {
         h2 {
             font-size: 2.5rem;
         }
     }
 
-    @media screen and (max-width: ${mobileWidth}px) {
+    @media screen and (max-width: ${tabletWidth}px) {
         img {
-            width: 30rem;
-            margin-top: 6rem;
-            padding-bottom: 3rem;
+            max-width: 30rem;
+            width: 90%;
+            margin-top: 3rem;
+            padding-bottom: 2.5rem;
         }
         h2 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
     }
 `;
@@ -79,21 +88,23 @@ export const CardList = styled.div`
 
     section {
         ${flexbox({direction: 'column', align: 'center', })}
-        width: 27rem;
-        height: 34rem;
+        max-width: 27rem;
+        width: 22%;
+        aspect-ratio: 3/3.8;
         border-radius: 1.5rem;
         box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.15);
         cursor: pointer;
 
         figure {
-            width: 25rem;
-            height: 22rem;
-
-            margin-top: 2.5rem;
+            max-width: 25rem;
+            width: 82%;
+            aspect-ratio: 1/1;
+            margin-top: 10%;
 
             img {
-                width: 22rem;
-                height: 22rem;
+                max-width: 22rem;
+                width: 100%;
+                aspect-ratio: 1/1;
                 position: relative;
                 left: 50%;
                 transform: translateX(-50%);
@@ -102,7 +113,7 @@ export const CardList = styled.div`
         h1 {
             margin: auto 0;
             font-family: 'SchoolSafeOuting';
-            font-size: 2.7rem;
+            font-size: clamp(1.6rem, 2.3vw, 2.1rem);
             font-weight: 700;
             letter-spacing: .1rem;
             color: ${color('main','darkest')}
@@ -123,29 +134,8 @@ export const CardList = styled.div`
         box-shadow: 0 1.2rem 2rem rgba(0, 0, 0, 0.25);
     }
 
+    // 모바일에서는 가로 드래그!
     @media screen and (max-width: ${tabletWidth}px) {
-        margin-top: 4rem;
-        gap: 2rem;
-        section {
-            width: 13rem;
-            height: 18rem;
-
-            figure {
-                width: 10rem;
-                height: 11rem;
-                margin-top: 1.5rem;
-                img {
-                    width: 11rem;
-                    height: 11rem;
-                }
-            }
-            h1 {
-                font-size: 1.8rem;
-            }
-        }
-    }
-
-    @media screen and (max-width: ${mobileWidth}px) {
         ${flexbox({direction: 'row'})}
         overflow-x: auto;
         gap: 2rem;
@@ -153,14 +143,26 @@ export const CardList = styled.div`
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
-        width: 21rem;
+        max-width: 23rem;
+        margin-top: 2.2rem;
 
         section {
             flex: 0 0 80%;
             scroll-snap-align: center;
             transition: transform 0.3s;
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.12);
             margin-bottom: 1rem;
+            height: 19rem;
+
+            figure {
+                width: 13rem;
+                height: 13rem;
+                margin-top: 1.2rem;
+                img {
+                    width: 13rem;
+                    height: 13rem;
+                }
+            }
         }
 
         &::-webkit-scrollbar {
@@ -189,7 +191,9 @@ export const QuizWorldFooter = styled.footer`
         text-decoration: underline;
     }
 
-    @media screen and (max-width: ${mobileWidth}px) {
-        font-size: 1rem;
+    @media screen and (max-width: ${tabletWidth}px) {
+        p {
+            font-size: .9rem;
+        }
     }
 `;

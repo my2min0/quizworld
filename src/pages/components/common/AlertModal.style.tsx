@@ -1,5 +1,5 @@
 ﻿import styled from "styled-components";
-import { tabletWidth } from "../../../App.style";
+import { mobileWidth } from "../../../App.style";
 import { flexbox } from "../../../common/theme/flexbox";
 import { color } from "../../../common/theme/colors";
 
@@ -16,35 +16,43 @@ export const Modal = styled.div<IAlertModalProps>`
     }
 
     .modal {
+        width: 90%;
+        max-width: 25rem;
+        height: 17rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
         background-color: ${({ page }) => color(page, 'lightest')};
-        border-radius: 16px;
+        border-radius: 1.6rem;
         z-index: 10;
 
         h1 {
             ${flexbox({justify: 'center', align: 'center'})}
             width: 100%;
-            height: 168px;
+            height: 13.8rem;
             text-align: center;
-            font-size: 18px;
+            font-size: 1.4rem;
             font-weight: 700;
-            line-height: 26px;
+            line-height: 2.6rem;
         }
 
         .btn-set {
             ${flexbox({justify:'center', align: 'center'})}
             width: 100%;
-            height: 48px;
+            height: 2.8rem;
             position: relative;
             bottom: -1px;
             margin: 0;
-            font-size: 18px;
+            font-size: 1.4rem;
             font-weight: 700;
 
             .modal-sub-btn {
                 width: 100%;
-                padding: 10px;
+                padding: 1rem;
                 background-color: ${({ page }) => color(page, 'light')};
-                border-radius: 0 0 0 16px;
+                border-radius: 0 0 0 1.6rem;
 
                 &:focus-visible {
                     outline: 3px solid red;
@@ -57,7 +65,7 @@ export const Modal = styled.div<IAlertModalProps>`
 
             .modal-btn {
                 width: 100%;
-                padding: 10px;
+                padding: 1rem;
                 background-color: ${({ page }) => color(page, 'primary')};
                 color: ${({ page }) => color(page, 'darkest')};
 
@@ -67,52 +75,41 @@ export const Modal = styled.div<IAlertModalProps>`
             }
             
             .hidden-radius {
-                border-radius: 0 0 16px 16px;
+                border-radius: 0 0 1.6rem 1.6rem;
             }
     
             .set-radius {
-                border-radius: 0 0 16px 0;
+                border-radius: 0 0 1.6rem 0;
             }
         }
 
     }
 
-    @media screen and (min-width: ${tabletWidth}px) {
+    @media screen and (max-width: ${mobileWidth}px) {
         .modal {
-            max-width: 330px;
-            width: 90%;
-            height: 216px;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-    }
-
-    @media screen and (max-width: ${tabletWidth}px) {
-        .modal {
+            max-width: 30rem;
             width: 100%;
-            height: 290px;
-            position: absolute;
-            bottom: 0;
-            border-radius: 16px 16px 0 0;
+            height: 18rem;
+            top: 0;
+            transform: translate(-50%, 100%);
+            border-radius: 1.6rem 1.6rem 0 0;
             
             span {
                 content: '';
-                width: 60px;
-                height: 5px;
-                border-radius: 30px;
+                width: 6rem;
+                height: .5rem;
+                border-radius: 3rem;
                 background-color: #DDD;
 
                 position: absolute;
-                top: 15px;
+                top: 1.5rem;
                 left: 50%;
                 transform: translateX(-50%);
             }
             
             h1 {
-                height: 220px;
-                font-size: 24px;
+                height: 15rem;
+                font-size: 1.4rem;
                 font-weight: 600;
                 line-height: 130%;
             }
@@ -121,20 +118,20 @@ export const Modal = styled.div<IAlertModalProps>`
                 position: absolute;
                 left: 50%;
                 transform: translateX(-50%);
-                bottom: 20px;
-                height: 60px;
-                gap: 10px;
+                bottom: 0;
+                height: 6rem;
+                gap: 1rem;
                 border-radius: 0;
-                padding: 0 10px;
+                padding: 0 1rem;
 
-                font-size: 20px;
+                font-size: 1.2rem;
                 
                 .modal-sub-btn,
                 .modal-btn {
                     width: 90%;
-                    border-radius: 16px;
+                    border-radius: 1.6rem;
                     
-                    height: 60px;
+                    height: 3rem;
                     font-weight: 600;
                 }
             }

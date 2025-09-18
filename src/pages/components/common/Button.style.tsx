@@ -1,5 +1,5 @@
 ﻿import styled from "styled-components";
-import { tabletWidth } from "../../../App.style"; 
+import { mobileWidth } from "../../../App.style"; 
 import { color } from "../../../common/theme/colors";
 
 interface IButtonStyleProps {
@@ -8,11 +8,9 @@ interface IButtonStyleProps {
 
 export const Button = styled.div<IButtonStyleProps>`
     button {
-        padding: 10px;
-
-        border-radius: 100px;
+        border-radius: 10rem;
         
-        font-size: 24px;
+        font-size: 1.7rem;
         font-weight: 500;
         
         /* &:focus-visible {
@@ -27,7 +25,7 @@ export const Button = styled.div<IButtonStyleProps>`
     }
     .disable {
         background-color: #eee;
-        color: ${({ page }) => color(page, 'primary')};
+        color: #ccc;
     }
     .able {
         background-color: ${({ page }) => color(page, 'light')};
@@ -36,30 +34,37 @@ export const Button = styled.div<IButtonStyleProps>`
 
     // size
     .sm {
-        width: 240px;
-        height: 62px;
+        width: 15rem;
+        height: 3.8rem;
     }
     .md {
-        width: 335px;
-        height: 62px;
+        width: clamp(12.5rem, 44vw, 21.5rem);
+        height: 3.8rem;
     }
     .lg {
-        width: 730px;
-        height: 62px;
+        max-width: 45rem;
+        width: 95%;
+        height: 3.8rem;
+    }
+    .modal-btn {
+        font-size: 1.4rem;
+        width: 10rem;
+        height: 3rem;
     }
 
-    @media screen and (max-width: ${tabletWidth}px) {
+    @media screen and (max-width: ${mobileWidth}px) {
         // size
         .sm, .lg {
-            height: 58px;
-            max-width: 414px;
+            max-width: 41.4rem;
+            height: 3.3rem;
+            font-size: 1.4rem;
             width: 90%;
         }
 
         .md {
-            height: 58px;
-            max-width: 190px;
-            /* width: 40%; */
+            max-width: 19rem;
+            height: 3.3rem;
+            font-size: 1.4rem;
         }
     }
 `;

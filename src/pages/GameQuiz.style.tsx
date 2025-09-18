@@ -1,5 +1,5 @@
 ﻿import styled from "styled-components";
-import { tabletWidth } from "../App.style";
+import { mobileWidth } from "../App.style";
 import { flexbox } from "../common/theme/flexbox";
 import { color } from "../common/theme/colors";
 import type { PageType } from "../common/theme/types";
@@ -27,35 +27,46 @@ export const GameQuizWrapper = styled.div<ISubjectProps>`
         white-space: nowrap;
         border: 0;
     }
+
+    @media screen and (max-width: ${mobileWidth}px) {
+        width: 100vw;
+        height: 100dvh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 `;
 
 export const QuestionWrapper = styled.div<ISubjectProps>`
     .question {
-        ${flexbox({justify: 'flex-start'})}
-        gap: 10px;
+        ${flexbox({justify: 'flex-start', align: 'center'})}
+        gap: .7rem;
 
         position: relative;
-        top: 40px;
+        top: 2rem;
         left: 50%;
         transform: translateX(-50%);
-        width: 740px;
+        max-width: 45rem;
+        width: 95%;
 
         
         h2 {
             ${flexbox({justify: 'center', align: 'center'})}
-            width: 70px;
-            height: 36px;
+            width: 4rem;
+            height: 2.5rem;
             background-color: #000;
             color: #FFF;
-            border-radius: 100px;
+            border-radius: 10rem;
 
-            font-size: 20px;
+            font-size: 1.3rem;
             font-weight: 500;
         }
 
         p {
-            width: 670px;
-            font-size: 22px;
+            max-width: 40rem;
+            width: 87%;
+            font-size: 1.4rem;
             font-weight: 500;
             line-height: 152%;
         }
@@ -63,59 +74,62 @@ export const QuestionWrapper = styled.div<ISubjectProps>`
 
     .marking {
         position: absolute;
-        top: -15px;
-        left: -13px;
+        top: -.8rem;
+        left: -1rem;
     }
 
-    @media screen and (max-width: ${tabletWidth}px) {
+    @media screen and (max-width: ${mobileWidth}px) {
         .question {
-            top: 27px;
-            max-width: 420px;
-            width: 90%;
-            
+            top: 1.7rem;
+            max-width: 25rem;
             h2 {
-                width: 75px;
-                height: 42px;
-                font-size: 21px;
+                width: 4rem;
+                height: 2.5rem;
+                font-size: 1.2rem;
             }
-
             p {
-                width: 320px;
-                font-size: 22px;
+                width: 21rem;
+                height: 3.8rem;
+                font-size: 1.2rem;
+                ${flexbox({align: 'center'})}
             }
         }
 
         .marking {
-            top: -12px;
-            left: -10px
+            top: 0rem;
+            left: -.5rem;
+
+            img {
+                width: 85%;
+            }
         }
     }
 `;
 
 export const ContentWrapper = styled.div<ISubjectProps>`
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 72%;
-    top: 110px;
+    margin-top: 3.5rem;
     overflow-x: hidden;
     overflow-y: scroll;
 
     .passage {
         position: relative;
-        top: 0px;
         left: 50%;
         transform: translateX(-50%);
-        width: 750px;
-        height: 135px;
-        padding: 10px 20px;
-        border-radius: 20px;
+        max-width: 45rem;
+        width: 90%;
+        height: 8rem;
+        padding: 2rem 2rem;
+        border-radius: 2rem;
         background-color: #FFF;
         
         p {
             ${flexbox({justify: 'center', align: 'center'})}
-            height: 110px;
-            font-size: 20px;
-            font-weight: 400;
+            height: 4rem;
+            font-size: 1.4rem;
+            font-weight: 500;
             text-align: center;
 
             overflow-y: scroll;
@@ -126,8 +140,10 @@ export const ContentWrapper = styled.div<ISubjectProps>`
         position: relative;
         left: 50%;
         transform: translateX(-50%);
-        width: 750px;
-        padding: 20px 0;
+        max-width: 45rem;
+        width: 90%;
+        height: 17.2rem;
+        margin-top: 1.7rem;
     }
 
     .explanation {
@@ -135,29 +151,31 @@ export const ContentWrapper = styled.div<ISubjectProps>`
         position: relative;
         left: 50%;
         transform: translateX(-50%);
-        padding-top: 10px;
+        margin-top: 1.7rem;
+        max-width: 45rem;
+        width: 90%;
 
         h3 {
             ${flexbox({align: 'center', justify: 'center'})}
-            width: 71px;
-            height: 110px;
-            border-radius: 20px 0 0 20px;
+            min-width: 4rem;
+            height: 8rem;
+            border-radius: 1.5rem 0 0 1.5rem;
             background-color: ${({ page }) => color(page, 'primary')};
             color: #FFF;
-            font-size: 18px;
+            font-size: 1.3rem;
             font-weight: 500;
         }
 
         div {
-            width: 679px;
-            height: 110px;
-            border-radius: 0 20px 20px 0;
+            width: 40.8rem;
+            height: 8rem;
+            border-radius: 0 1.5rem 1.5rem 0;
             background-color: #FFF;
-            padding: 20px;
+            padding: 1.5rem;
             
             p {
-                height: 70px;
-                font-size: 16px;
+                height: 5rem;
+                font-size: 1.3rem;
                 font-weight: 400;
                 line-height: 150%;
 
@@ -166,88 +184,79 @@ export const ContentWrapper = styled.div<ISubjectProps>`
         }
     }
 
-    @media screen and (max-width: ${tabletWidth}px) {
-        top: 115px;
-
+    @media screen and (max-width: ${mobileWidth}px) {
+        top: 0%;
+        height: 72dvh;
+        margin-top: 2.8rem;
         .passage {
             ${flexbox({justify: 'center', align: 'center'})}
-            max-width: 420px;
+            max-width: 25rem;
             width: 90%;
-            height: 130px;
-            padding: 10px 30px;
+            height: 7rem;
+            padding: 1rem 2rem;
             
             p {
-                font-size: 21px;
+                font-size: 1.2rem;
             }
         }
-
         .options {
-            max-width: 420px;
+            max-width: 25rem;
             width: 90%;
+            margin-top: 1rem;
+            height: 12.7rem;
         }
 
         .explanation {
             ${flexbox({direction:'column', align: 'center'})}
-
+            margin-top: 1rem;
             h3 {
-                max-width: 420px;
-                width: 90%;
-                height: 50px;
-                border-radius: 20px 20px 0 0;
-                font-size: 20px;
+                max-width: 25rem;
+                width: 100%;
+                height: 3rem;
+                border-radius: 1.2rem 1.2rem 0 0;
+                font-size: 1.1rem;
             }
 
             div {
-                max-width: 420px;
-                width: 90%;
-                height: 100px;
-                border-radius: 0 0 20px 20px;
+                max-width: 25rem;
+                width: 100%;
+                height: 6.5rem;
+                padding: 1rem;
+                border-radius: 0 0 1.2rem 1.2rem;
                 
                 p {
-                    height: 60px;
-                    font-size: 18px;
+                    height: 4.5rem;
+                    font-size: 1.1rem;
                     font-weight: 400;
                 }
             }
         }
-
-        .btn-set {
-            div {
-                gap: 10px;
-            }
-            max-width: 420px;
-            width: 90%;
-            bottom: -27px;
-        }
-
     }
 `;
 
 export const ButtonWrapper = styled.div`
     .btn-set {
-        width: 100%;
-        height: 62px;
+        max-width: 45rem;
+        width: 90%;
+        bottom: 1.5rem;
 
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        bottom: 30px;
 
         div {
             ${flexbox({justify: 'center', align: 'center'})}
-            gap: 40px;
+            gap: clamp(1rem, 3vw, 2rem);
         }
     }
 
-    @media screen and (max-width: ${tabletWidth}px) {
+    @media screen and (max-width: ${mobileWidth}px) {
         .btn-set {
-            max-width: 420px;
+            max-width: 25rem;
             width: 90%;
-            height: 58px;
-            bottom: 30px;
 
             div {
-                gap: 10px;
+                gap: 1rem;
             }
         }
 

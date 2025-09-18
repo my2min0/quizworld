@@ -1,5 +1,5 @@
 ﻿import styled from "styled-components";
-import { tabletWidth } from "../../App.style";
+import { mobileWidth } from "../../App.style";
 import { flexbox } from "../../common/theme/flexbox";
 import { color } from "../../common/theme/colors";
 import type { PageType } from "../../common/theme/types";
@@ -25,110 +25,85 @@ export const ResultModalWrapper = styled.div<ISubjectProps>`
         top: 50%;
         transform: translate(-50%, -50%);
         width: 80%;
-        height: 500px;
-        padding: 40px;
-        padding-bottom: 20px;
+        height: 34rem;
+        padding: 2rem;
+        padding-bottom: 2rem;
         z-index: 10;
 
         background-color: #FFF;
-        border-radius: 30px;
-
-        @media screen and (max-width: ${tabletWidth}px) {
-            padding: 20px;
-        }
+        border-radius: 2.5rem;
 
         section > div {
             ${flexbox({align: 'center'})}
-            gap: 10px;
+            gap: .5rem;
         }
 
         .q-section {
             h1 {
-                font-size: 20px;
+                font-size: 1.2rem;
+                width: 4.2rem;
                 font-weight: 600;
                 background-color: #000;
                 color: #FFF;
-                padding: 10px 15px;
-                border-radius: 20px;
+                padding: .7rem 1rem;
+                border-radius: 2rem;
             }
-            h2 {
-                font-size: 22px;
+            .question {
+                font-size: 1.3rem;
                 font-weight: 600;
+                line-height: 120%;
+                width: 27.5rem;
             }
             .passage {
                 ${flexbox({justify: 'center', align: 'center'})}
                 width: 100%;
-                height: 100px;
-                margin-top: 20px;
-                padding: 20px;
+                height: 7rem;
+                margin-top: 1rem;
+                font-size: 1.3rem;
+                font-weight: 600;
+                line-height: 120%;
+                padding: 2rem;
                 background-color: ${({ page }) => color(page, 'light')};
-                border-radius: 15px;
-            }
-
-            @media screen and (max-width: ${tabletWidth}px) {
-                h1 {
-                    min-width: 48px;
-                    font-size: 15px;
-                    padding: 10px;
-                }
-                h2 {
-                    font-size: 18px;
-                }
+                border-radius: 1.5rem;
             }
         }
 
         .a-section {
             div {
-                margin-top: 20px;
-                margin-left: 10px;
+                margin-top: 2rem;
+                margin-left: 1rem;
             }
             h3 {
-                font-size: 22px;
+                font-size: 1.4rem;
                 font-weight: 600;
             }
             p{
-                font-size: 22px;
+                font-size: 1.3rem;
                 font-weight: 500;
+                // 형광펜 효과
+                box-shadow: inset 0 -0.5em 0 ${({ page }) => color(page, 'light')};
+                margin-left: .8rem;
             }
 
             .explanation {
                 position: absolute;
-                top: 315px;
-                left: 60px;
-                padding: 20px 25px;
+                top: 21.5rem;
+                left: 4.5rem;
+                max-width: 80%;
+                padding: .8rem 1.3rem;
                 background-color: ${({ page }) => color(page, 'dark')};
                 color: ${({ page }) => color(page, 'lightest')};
-                border-radius: 30px;
-                font-size: 18px;
+                border-radius: 3rem;
+                font-size: 1.1rem;
                 font-weight: 600;
             }
             .explanation::after {
                 content: '';
                 position: absolute;
-                top: -28px;
-                left: 30px;
-                border: 16px solid ${({ page }) => color(page, 'dark')};
+                top: -1.8rem;
+                left: 1.8rem;
+                border: 1rem solid ${({ page }) => color(page, 'dark')};
                 border-color: transparent transparent ${({ page }) => color(page, 'dark')} transparent;
-            }
-
-            @media screen and (max-width: ${tabletWidth}px) {
-                h3 {
-                    font-size: 18px;
-                }
-                p {
-                    font-size: 18px;
-                }
-                .explanation {
-                    top: 280px;
-                    left: 50px;
-                    max-width: 83%;
-                    padding: 10px 15px;
-                    font-size: 15px;
-                }
-                .explanation::after {
-                    top: -25px;
-                    left: 20px;
-                }
             }
         }
 
@@ -136,8 +111,62 @@ export const ResultModalWrapper = styled.div<ISubjectProps>`
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            bottom: 20px;
-            
+            bottom: 1.6rem;
+        }
+    }
+
+    @media screen and (max-width: ${mobileWidth}px) {
+        width: 100vw;
+        height: 100dvh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+
+        .modal {
+            padding: 1.3rem;
+            height: 28rem;
+        }
+
+        .q-section {
+            h1 {
+                font-size: 1rem !important;
+                width: 3.3rem !important;
+                padding: .5rem .7rem !important;
+            }
+            .question {
+                font-size: 1.1rem !important;
+                width: 16rem !important;
+            }
+            .passage {
+                height: 5rem !important;
+                font-size: 1.1rem !important;
+            }
+        }
+
+        .a-section {
+            div {
+                margin-top: 1.5rem !important;
+            }
+            h3 {
+                font-size: 1.2rem !important;
+            }
+            p {
+                font-size: 1.2rem !important;
+                margin-left: .5rem !important;
+            }
+            .explanation {
+                top: 17rem !important;
+                left: 2rem !important;
+                max-width: 90% !important;
+                padding: .5rem 1rem !important;
+                font-size: 1rem !important;
+            }
+            .explanation::after {
+                top: -1.5rem !important;
+                left: 2.8rem !important;
+            }
         }
     }
 `;

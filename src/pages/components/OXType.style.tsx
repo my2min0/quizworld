@@ -1,5 +1,5 @@
 ﻿import styled, { css } from "styled-components";
-import { tabletWidth } from "../../App.style";
+import { mobileWidth } from "../../App.style";
 import { flexbox } from "../../common/theme/flexbox";
 import { color } from "../../common/theme/colors";
 import type { PageType, ColorType } from "../../common/theme/types";
@@ -13,45 +13,47 @@ export const QuizWrapper = styled.div`
     fieldset {
         ${flexbox({justify: 'space-between', align: 'center'})}
         position: relative;
+        max-width: 45rem;
+        width: 100%;
     }
 
     button {
-        width: 355px;
-        height: 250px;
+        max-width: 21.5rem;
+        width: 48%;
+        height: 17rem;
         border: 2px solid #EEE3D2;
         outline: none;
         outline-offset: -1px;
-        @media screen and (max-width: ${tabletWidth}px) {
+        @media screen and (max-width: ${mobileWidth}px) {
             outline-offset: -2px;
         }
-        border-radius: 40px;
+        border-radius: 2.5rem;
         background-color: #FFF;
 
         &:focus-visible {
             outline: 3px solid #663300 !important;
             outline-offset: 3px;
-        }   
+        }
     }
 
-    @media screen and (max-width: ${tabletWidth}px) {
+    @media screen and (max-width: ${mobileWidth}px) {
         fieldset {
-            max-width: 420px;
+            max-width: 42rem;
             width: 100%;
         }
         
         div {
-            max-width: 200px;
+            max-width: 20rem;
             width: 100%;
         }
         button {
-            max-width: 200px;
-            width: 95%;
-            height: 250px;
-            border-radius: 25px;
+            max-width: 12rem;
+            width: 48%;
+            height: 12.7rem;
+            border-radius: 2.5rem;
 
-            svg {
-                width: 85px;
-                height: 85px;
+            img {
+                width: 5rem;
             }
         }
     }
@@ -65,7 +67,7 @@ export const OButton = styled.button<IOXTypeProps>`
                     border: 2px solid  ${color(page, 'dark')} !important;
                     outline: 2px solid  ${color(page, 'dark')} !important;
 
-                    @media screen and (max-width: ${tabletWidth}px) {
+                    @media screen and (max-width: ${mobileWidth}px) {
                         border-width: 3px !important;
                         outline-width: 3px !important;
                     }
@@ -85,20 +87,19 @@ export const OButton = styled.button<IOXTypeProps>`
     }}
 
     .correct {
-        ${flexbox({align: 'center'})}
-        gap: 6px;
-
-        position: absolute;
-        top: 20px;
-        left: 20px;
-
+        position: relative;
+        top: -10rem;
+        left: 1.5rem;
+        width: 3rem;
         color: #FFF;
-        font-size: 20px;
+        font-size: 1.4rem;
         font-weight: 500;
+        z-index: 10;
+    }
 
-        circle, path {
-            stroke: #1490F5;
-        }
+    .white-o {
+        position: relative;
+        top: 1rem;
     }
 `;
 
@@ -110,7 +111,7 @@ export const XButton = styled.button<IOXTypeProps>`
                     border: 2px solid  ${color(page, 'dark')} !important;
                     outline: 2px solid  ${color(page, 'dark')} !important;
 
-                    @media screen and (max-width: ${tabletWidth}px) {
+                    @media screen and (max-width: ${mobileWidth}px) {
                         border-width: 3px !important;
                         outline-width: 3px !important;
                     }
@@ -133,24 +134,23 @@ export const XButton = styled.button<IOXTypeProps>`
     }}
 
     .correct {
-        ${flexbox({align: 'center'})}
-        gap: 6px;
-
-        position: absolute;
-        top: 24px;
-        left: 420px;
-
+        position: relative;
+        top: -10rem;
+        left: 1.5rem;
+        width: 3rem;
         color: #FFF;
-        font-size: 20px;
+        font-size: 1.4rem;
         font-weight: 500;
-        
-        circle, path {
-            stroke: #FF1D1D;
-        }
+        z-index: 10;
     }
 
-    @media screen and (max-width: ${tabletWidth}px) {
-        top: 12px;
-        left: 200px;
+    .white-x {
+        position: relative;
+        top: 1rem;
+    }
+
+    @media screen and (max-width: ${mobileWidth}px) {
+        top: 1.2rem;
+        left: 20rem;
     }
 `;
