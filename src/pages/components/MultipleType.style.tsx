@@ -56,6 +56,7 @@ export const QuizWrapper = styled.div`
             padding: 0;
             border-radius: 2rem;
             border-width: 2.5px;
+            color: #000;
 
             font-size: 1.2rem;
         }
