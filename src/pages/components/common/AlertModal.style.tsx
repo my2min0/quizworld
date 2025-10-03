@@ -90,8 +90,8 @@ export const Modal = styled.div<IAlertModalProps>`
             max-width: 30rem;
             width: 100%;
             height: 18rem;
-            top: 0;
-            transform: translate(-50%, 100%);
+            top: 100%;
+            transform: translate(-50%, -100%);
             border-radius: 1.6rem 1.6rem 0 0;
             
             span {

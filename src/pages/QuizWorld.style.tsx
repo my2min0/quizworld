@@ -44,7 +44,7 @@ export const QuizWorldWrapper = styled.div`
 
     @media screen and (max-width: ${tabletWidth}px) {
         .popup-alert {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             line-height: 100%;
             margin-top: 3rem;
 
